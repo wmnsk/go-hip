@@ -63,9 +63,9 @@ func Decode(b []byte) (Param, error) {
 		p = &DHGroupList{}
 	case ParamTypeDiffieHellman:
 		p = &DiffieHellman{}
+	case ParamTypeHIPCipher:
+		p = &HIPCipher{}
 		/* XXX - not implemented
-		case ParamTypeHIPCipher:
-			p = &HIPCipher{}
 		case ParamTypeEncrypted:
 			p = &Encrypted{}
 		case ParamTypeHostID:

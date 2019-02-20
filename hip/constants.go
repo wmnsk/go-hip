@@ -17,3 +17,14 @@ const (
 	SecP160R1
 	ModPGroup2048Bit
 )
+
+// Suite ID definitions.
+//
+// Spec: 5.2.8.  HIP_CIPHER
+const (
+	_ uint16 = iota
+	NullEncrypt
+	AES128CBC
+	_
+	AES256CBC
+)
