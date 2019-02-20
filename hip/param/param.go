@@ -7,6 +7,8 @@ package param
 import "encoding/binary"
 
 // Parameter Type definitions.
+//
+// Spec: 5.2.  HIP Parameters
 const (
 	ParamTypeR1Counter            uint16 = 129
 	ParamTypePuzzle               uint16 = 257

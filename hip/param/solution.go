@@ -9,6 +9,8 @@ import (
 )
 
 // Solution represents a header (common fields) in HIP parameter.
+//
+// Spec: 5.2.5.  SOLUTION
 type Solution struct {
 	*Header
 	NoOfK          uint8

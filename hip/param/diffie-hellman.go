@@ -9,6 +9,8 @@ import (
 )
 
 // DiffieHellman represents a header (common fields) in HIP parameter.
+//
+// Spec: 5.2.7.  DIFFIE_HELLMAN
 type DiffieHellman struct {
 	*Header
 	GroupID           uint8

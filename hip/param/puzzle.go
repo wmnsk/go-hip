@@ -9,6 +9,8 @@ import (
 )
 
 // Puzzle represents a header (common fields) in HIP parameter.
+//
+// Spec: 5.2.4.  PUZZLE
 type Puzzle struct {
 	*Header
 	NoOfK    uint8

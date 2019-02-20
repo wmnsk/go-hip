@@ -5,6 +5,8 @@
 package packet
 
 // Packet Type definitions.
+//
+// Spec: 5.3.  HIP Packets
 const (
 	PktTypeI1       uint8 = 1
 	PktTypeR1       uint8 = 2
