@@ -47,9 +47,9 @@ func Decode(b []byte) (Param, error) {
 	switch typ {
 	case ParamTypeR1Counter:
 		p = &R1Counter{}
+	case ParamTypePuzzle:
+		p = &Puzzle{}
 		/* XXX - not implemented
-		case ParamTypePuzzle:
-			p = &Puzzle{}
 		case ParamTypeSolution:
 			p = &Solution{}
 		case ParamTypeSeq:

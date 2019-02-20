@@ -21,7 +21,7 @@ type Header struct {
 func NewHeader(typ uint16, contents []byte) *Header {
 	h := &Header{Type: typ, Contents: contents}
 	// add Padding
-	h.Padding = make([]byte, padlen(contents))
+	h.Padding = make([]byte, padlen(len(contents)))
 
 	h.SetLength()
 	return h
@@ -50,7 +50,7 @@ func (h *Header) DecodeFromBytes(b []byte) error {
 	}
 
 	h.Contents = b[4:ll]
-	h.Padding = b[ll : ll+padlen(h.Contents)]
+	h.Padding = b[ll : ll+padlen(len(h.Contents))]
 	return nil
 }
 
@@ -76,8 +76,8 @@ func (h *Header) SerializeTo(b []byte) error {
 }
 
 // padlen returns the length of Padding, calcurated from the Contents.
-func padlen(b []byte) int {
-	if rem := (len(b) + 4) % 8; rem != 0 {
+func padlen(l int) int {
+	if rem := (l + 4) % 8; rem != 0 {
 		return 8 - rem
 	}
 	return 0

@@ -78,8 +78,3 @@ func (r *R1Counter) Len() int {
 func (r *R1Counter) SetLength() {
 	r.Length = 12 // fixed by spec
 }
-
-// ParamType returns the type of parameter.
-func (r *R1Counter) ParamType() uint16 {
-	return r.Type
-}
