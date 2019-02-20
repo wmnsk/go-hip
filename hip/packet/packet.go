@@ -6,12 +6,12 @@ package packet
 
 // Packet Type definitions.
 const (
-	MsgTypeI1       uint8 = 1
-	MsgTypeR1       uint8 = 2
-	MsgTypeI2       uint8 = 3
-	MsgTypeR2       uint8 = 4
-	MsgTypeUpdate   uint8 = 16
-	MsgTypeNotify   uint8 = 17
-	MsgTypeClose    uint8 = 18
-	MsgTypeCloseAck uint8 = 19
+	PktTypeI1       uint8 = 1
+	PktTypeR1       uint8 = 2
+	PktTypeI2       uint8 = 3
+	PktTypeR2       uint8 = 4
+	PktTypeUpdate   uint8 = 16
+	PktTypeNotify   uint8 = 17
+	PktTypeClose    uint8 = 18
+	PktTypeCloseAck uint8 = 19
 )
