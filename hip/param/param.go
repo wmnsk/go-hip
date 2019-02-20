@@ -29,3 +29,11 @@ const (
 	ParamTypeEchoRequestUnSigned  uint16 = 63661
 	ParamTypeEchoResponseUNSigned uint16 = 63425
 )
+
+// Param is an interface that all the parameters
+type Param interface {
+	DecodeFromBytes([]byte) error
+	Serialize() ([]byte, error)
+	Len() int
+	ParamType() uint16
+}
