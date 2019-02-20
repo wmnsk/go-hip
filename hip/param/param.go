@@ -51,13 +51,15 @@ func Decode(b []byte) (Param, error) {
 		p = &Puzzle{}
 	case ParamTypeSolution:
 		p = &Solution{}
+	/* XXX - not implemented
+	case ParamTypeSeq:
+		p = &Seq{}
+	case ParamTypeAck:
+		p = &Ack{}
+	*/
+	case ParamTypeDHGroupList:
+		p = &DHGroupList{}
 		/* XXX - not implemented
-		case ParamTypeSeq:
-			p = &Seq{}
-		case ParamTypeAck:
-			p = &Ack{}
-		case ParamTypeDHGroupList:
-			p = &DHGroupList{}
 		case ParamTypeDiffieHellman:
 			p = &DiffieHellman{}
 		case ParamTypeHIPCipher:
