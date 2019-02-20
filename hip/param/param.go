@@ -49,9 +49,9 @@ func Decode(b []byte) (Param, error) {
 		p = &R1Counter{}
 	case ParamTypePuzzle:
 		p = &Puzzle{}
+	case ParamTypeSolution:
+		p = &Solution{}
 		/* XXX - not implemented
-		case ParamTypeSolution:
-			p = &Solution{}
 		case ParamTypeSeq:
 			p = &Seq{}
 		case ParamTypeAck:

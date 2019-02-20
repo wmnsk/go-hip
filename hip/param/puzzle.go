@@ -11,20 +11,20 @@ import (
 // Puzzle represents a header (common fields) in HIP parameter.
 type Puzzle struct {
 	*Header
-	NoOfK        uint8
-	Lifetime     uint8
-	Opaque       uint16
-	RandomeNoOfI []byte
+	NoOfK    uint8
+	Lifetime uint8
+	Opaque   uint16
+	Random   []byte
 }
 
 // NewPuzzle creates a new Puzzle.
 func NewPuzzle(bits, lifetime uint8, opaque uint16, random []byte) *Puzzle {
 	p := &Puzzle{
-		Header:       &Header{Type: ParamTypePuzzle},
-		NoOfK:        bits,
-		Lifetime:     lifetime,
-		Opaque:       opaque,
-		RandomeNoOfI: random,
+		Header:   &Header{Type: ParamTypePuzzle},
+		NoOfK:    bits,
+		Lifetime: lifetime,
+		Opaque:   opaque,
+		Random:   random,
 	}
 
 	p.Padding = make([]byte, padlen(4+len(random)))
@@ -44,7 +44,7 @@ func DecodePuzzle(b []byte) (*Puzzle, error) {
 // DecodeFromBytes decodes the given bytes as a Puzzle.
 func (p *Puzzle) DecodeFromBytes(b []byte) error {
 	l := len(b)
-	if l < 12 {
+	if l < 9 {
 		return ErrTooShortToDecode
 	}
 
@@ -57,7 +57,7 @@ func (p *Puzzle) DecodeFromBytes(b []byte) error {
 	p.NoOfK = p.Header.Contents[0]
 	p.Lifetime = p.Header.Contents[1]
 	p.Opaque = binary.BigEndian.Uint16(p.Header.Contents[2:4])
-	p.RandomeNoOfI = p.Header.Contents[4:]
+	p.Random = p.Header.Contents[4:]
 
 	return nil
 }
@@ -77,17 +77,17 @@ func (p *Puzzle) SerializeTo(b []byte) error {
 	p.Header.Contents[0] = p.NoOfK
 	p.Header.Contents[1] = p.Lifetime
 	binary.BigEndian.PutUint16(p.Header.Contents[2:4], p.Opaque)
-	copy(p.Header.Contents[4:], p.RandomeNoOfI)
+	copy(p.Header.Contents[4:], p.Random)
 
 	return p.Header.SerializeTo(b)
 }
 
 // Len returns the total length of a Puzzle, including Padding.
 func (p *Puzzle) Len() int {
-	return 4 + 4 + len(p.RandomeNoOfI) + len(p.Padding)
+	return 4 + 4 + len(p.Random) + len(p.Padding)
 }
 
 // SetLength sets the length of Contents in Length field.
 func (p *Puzzle) SetLength() {
-	p.Length = uint16(4 + len(p.RandomeNoOfI))
+	p.Length = uint16(4 + len(p.Random))
 }
