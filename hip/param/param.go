@@ -4,6 +4,8 @@
 
 package param
 
+import "encoding/binary"
+
 // Parameter Type definitions.
 const (
 	ParamTypeR1Counter            uint16 = 129
@@ -36,4 +38,65 @@ type Param interface {
 	Serialize() ([]byte, error)
 	Len() int
 	ParamType() uint16
+}
+
+// Decode decodes given bytes as Param.
+func Decode(b []byte) (Param, error) {
+	var p Param
+	typ := binary.BigEndian.Uint16(b[:2])
+	switch typ {
+	case ParamTypeR1Counter:
+		p = &R1Counter{}
+		/* XXX - not implemented
+		case ParamTypePuzzle:
+			p = &Puzzle{}
+		case ParamTypeSolution:
+			p = &Solution{}
+		case ParamTypeSeq:
+			p = &Seq{}
+		case ParamTypeAck:
+			p = &Ack{}
+		case ParamTypeDHGroupList:
+			p = &DHGroupList{}
+		case ParamTypeDiffieHellman:
+			p = &DiffieHellman{}
+		case ParamTypeHIPCipher:
+			p = &HIPCipher{}
+		case ParamTypeEncrypted:
+			p = &Encrypted{}
+		case ParamTypeHostID:
+			p = &HostID{}
+		case ParamTypeHITSuiteList:
+			p = &HITSuiteList{}
+		case ParamTypeCert:
+			p = &Cert{}
+		case ParamTypeNotification:
+			p = &Notification{}
+		case ParamTypeEchoRequestSigned:
+			p = &EchoRequestSigned{}
+		case ParamTypeEchoResponseSigned:
+			p = &EchoResponseSigned{}
+		case ParamTypeTransportFormatList:
+			p = &TransportFormatList{}
+		case ParamTypeHIPMAC:
+			p = &HIPMAC{}
+		case ParamTypeHIPMAC2:
+			p = &HIPMAC2{}
+		case ParamTypeHIPSignature2:
+			p = &HIPSignature2{}
+		case ParamTypeHIPSignature:
+			p = &HIPSignature{}
+		case ParamTypeEchoRequestUnSigned:
+			p = &EchoRequestUnSigned{}
+		case ParamTypeEchoResponseUNSigned:
+			p = &EchoResponseUNSigned{}
+		default:
+			p = &Generic{}
+		*/
+	}
+
+	if err := p.DecodeFromBytes(b); err != nil {
+		return nil, err
+	}
+	return p, nil
 }

@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	"github.com/pascaldekloe/goe/verify"
+	"github.com/wmnsk/go-hip/hip/param"
 )
 
 // Serializeable is just for testing Params. Don't use this.
@@ -60,23 +61,21 @@ func Run(t *testing.T, cases []TestCase, decode DecodeFunc) {
 				}
 			})
 
-			/*
-				t.Run("Interface", func(t *testing.T) {
-					// Ignore *Header and Generic in this tests.
-					if _, ok := c.Structured.(*param.Header); ok {
-						return
-					}
+			t.Run("Interface", func(t *testing.T) {
+				// Ignore *Header and Generic in this tests.
+				if _, ok := c.Structured.(*param.Header); ok {
+					return
+				}
 
-					decoded, err := param.Decode(c.Serialized)
-					if err != nil {
-						t.Fatal(err)
-					}
+				decoded, err := param.Decode(c.Serialized)
+				if err != nil {
+					t.Fatal(err)
+				}
 
-					if got, want := decoded.ParamType(), c.Structured.(param.Param).ParamType(); got != want {
-						t.Fatalf("got %v want %v", got, want)
-					}
-				})
-			*/
+				if got, want := decoded.ParamType(), c.Structured.(param.Param).ParamType(); got != want {
+					t.Fatalf("got %v want %v", got, want)
+				}
+			})
 		})
 	}
 }
