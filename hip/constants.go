@@ -1,3 +1,7 @@
+// Copyright 2019 go-hip authors. All rights reserved.
+// Use of this source code is governed by a MIT-style license that can be
+// found in the LICENSE file.
+
 package hip
 
 // DH Group ID definitions.
@@ -7,15 +11,15 @@ const (
 	_ uint8 = iota
 	_
 	_
-	ModPGroup1536Bit
-	ModPGroup3072Bit
+	DHGroupModPGroup1536Bit
+	DHGroupModPGroup3072Bit
 	_
 	_
-	NISTP256
-	NISTP384
-	NISTP521
-	SecP160R1
-	ModPGroup2048Bit
+	DHGroupNISTP256
+	DHGroupNISTP384
+	DHGroupNISTP521
+	DHGroupSecP160R1
+	DHGroupModPGroup2048Bit
 )
 
 // Suite ID definitions.
@@ -23,8 +27,50 @@ const (
 // Spec: 5.2.8.  HIP_CIPHER
 const (
 	_ uint16 = iota
-	NullEncrypt
-	AES128CBC
+	CipherSuiteNullEncrypt
+	CipherSuiteAES128CBC
 	_
-	AES256CBC
+	CipherSuiteAES256CBC
+)
+
+// Domain Identifier definitions.
+//
+// Spec: 5.2.9.  HOST_ID
+const (
+	DomainNone uint8 = iota
+	DomainFQDN
+	DomainNAI
+)
+
+// HI Algorithm definitions.
+//
+// Spec: 5.2.9.  HOST_ID
+const (
+	_ uint16 = iota
+	_
+	_
+	AlgDSA
+	_
+	AlgRSA
+	_
+	AlgECDSA
+	_
+	AlgECDSALow
+)
+
+// ECC Curve definitions for ECDSA algorithm.
+//
+// Spec: 5.2.9.  HOST_ID
+const (
+	_ uint16 = iota
+	ECCNISTP256
+	ECCNISTP384
+)
+
+// ECC Curve definitions for ECDSA_LOW algorithm.
+//
+// Spec: 5.2.9.  HOST_ID
+const (
+	_ uint16 = iota
+	ECCSecP160R1
 )
