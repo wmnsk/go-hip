@@ -42,7 +42,7 @@ Parameters defined in 5.2. HIP Parameters, RFC 7401 are under its implementation
 | 129   | R1Counter            | Yes        |
 | 257   | Puzzle               | Yes        |
 | 321   | Solution             | Yes        |
-| 385   | Seq                  |            |
+| 385   | Seq                  | Yes        |
 | 449   | Ack                  |            |
 | 511   | DHGroupList          | Yes        |
 | 513   | DiffieHellman        | Yes        |
