@@ -79,10 +79,8 @@ func Decode(b []byte) (Param, error) {
 		p = &Notification{}
 	case ParamTypeEchoRequestSigned:
 		p = &EchoRequestSigned{}
-	/* XXX - not implemented
 	case ParamTypeEchoResponseSigned:
 		p = &EchoResponseSigned{}
-	*/
 	case ParamTypeTransportFormatList:
 		p = &TransportFormatList{}
 	case ParamTypeHIPMAC:
@@ -95,9 +93,9 @@ func Decode(b []byte) (Param, error) {
 		p = &HIPSignature{}
 	case ParamTypeEchoRequestUnsigned:
 		p = &EchoRequestUnsigned{}
+	case ParamTypeEchoResponseUnsigned:
+		p = &EchoResponseUnsigned{}
 		/* XXX - not implemented
-		case ParamTypeEchoResponseUNSigned:
-			p = &EchoResponseUnsigned{}
 		default:
 			p = &Generic{}
 		*/

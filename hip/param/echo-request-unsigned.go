@@ -6,7 +6,7 @@ package param
 
 // EchoRequestUnsigned represents a EchoRequestUnsigned parameter.
 //
-// Spec: 5.2.20.  ECHO_REQUEST_SIGNED
+// Spec: 5.2.21.  ECHO_REQUEST_UNSIGNED
 type EchoRequestUnsigned struct {
 	*Header
 	OpaqueData []byte

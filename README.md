@@ -59,8 +59,8 @@ Parameters defined in 5.2. HIP Parameters, RFC 7401 are under its implementation
 | 61569 | HIPMAC2              | Yes        |
 | 61633 | HIPSignature2        | Yes        |
 | 61697 | HIPSignature         | Yes        |
-| 63661 | EchoRequestUnsigned  |            |
-| 63425 | EchoResponseUnsigned |            |
+| 63661 | EchoRequestUnsigned  | Yes        |
+| 63425 | EchoResponseUnsigned | Yes        |
 
 ## Disclaimer
 
