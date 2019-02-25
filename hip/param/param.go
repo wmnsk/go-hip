@@ -30,8 +30,8 @@ const (
 	ParamTypeHIPMAC2              uint16 = 61569
 	ParamTypeHIPSignature2        uint16 = 61633
 	ParamTypeHIPSignature         uint16 = 61697
-	ParamTypeEchoRequestUnSigned  uint16 = 63661
-	ParamTypeEchoResponseUNSigned uint16 = 63425
+	ParamTypeEchoRequestUnsigned  uint16 = 63661
+	ParamTypeEchoResponseUnsigned uint16 = 63425
 )
 
 // Param is an interface that all the parameters

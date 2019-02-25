@@ -25,11 +25,42 @@ go get -u github.com/pascaldekloe/goe/verify
 
 ### Running examples
 
-(to be updated)
+Not available yet!
 
 ## Supported Features
 
-(to be updated)
+### Packets
+
+Not available yet!
+
+### Parameters
+
+Parameters defined in 5.2. HIP Parameters, RFC 7401 are under its implementation.
+
+| ID    | Parameter Type       | Supported? |
+|-------|----------------------|------------|
+| 129   | R1Counter            | Yes        |
+| 257   | Puzzle               | Yes        |
+| 321   | Solution             | Yes        |
+| 385   | Seq                  |            |
+| 449   | Ack                  |            |
+| 511   | DHGroupList          | Yes        |
+| 513   | DiffieHellman        | Yes        |
+| 579   | HIPCipher            | Yes        |
+| 641   | Encrypted            |            |
+| 705   | HostID               | Yes        |
+| 715   | HITSuiteList         |            |
+| 768   | Cert                 |            |
+| 832   | Notification         |            |
+| 897   | EchoRequestSigned    |            |
+| 961   | EchoResponseSigned   |            |
+| 2049  | TransportFormatList  |            |
+| 61505 | HIPMAC               |            |
+| 61569 | HIPMAC2              |            |
+| 61633 | HIPSignature2        |            |
+| 61697 | HIPSignature         |            |
+| 63661 | EchoRequestUnsigned  |            |
+| 63425 | EchoResponseUnsigned |            |
 
 ## Disclaimer
 
