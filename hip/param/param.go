@@ -89,11 +89,11 @@ func Decode(b []byte) (Param, error) {
 		p = &HIPMAC{}
 	case ParamTypeHIPMAC2:
 		p = &HIPMAC2{}
+	case ParamTypeHIPSignature2:
+		p = &HIPSignature2{}
+	case ParamTypeHIPSignature:
+		p = &HIPSignature{}
 		/* XXX - not implemented
-		case ParamTypeHIPSignature2:
-			p = &HIPSignature2{}
-		case ParamTypeHIPSignature:
-			p = &HIPSignature{}
 		case ParamTypeEchoRequestUnSigned:
 			p = &EchoRequestUnsigned{}
 		case ParamTypeEchoResponseUNSigned:

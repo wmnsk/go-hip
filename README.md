@@ -57,8 +57,8 @@ Parameters defined in 5.2. HIP Parameters, RFC 7401 are under its implementation
 | 2049  | TransportFormatList  | Yes        |
 | 61505 | HIPMAC               | Yes        |
 | 61569 | HIPMAC2              | Yes        |
-| 61633 | HIPSignature2        |            |
-| 61697 | HIPSignature         |            |
+| 61633 | HIPSignature2        | Yes        |
+| 61697 | HIPSignature         | Yes        |
 | 63661 | EchoRequestUnsigned  |            |
 | 63425 | EchoResponseUnsigned |            |
 
