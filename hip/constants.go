@@ -84,3 +84,11 @@ const (
 	HITSuiteECDSASHA384  uint8 = 0x20
 	HITSuiteECDSALOWSHA1 uint8 = 0x30
 )
+
+// Transport Format definitions.
+//
+// Spec: 5.2.11.  TRANSPORT_FORMAT_LIST, RFC 7401 and
+// 5.1.  New Parameters, RFC 7402.
+const (
+	TFESP uint16 = 4095
+)

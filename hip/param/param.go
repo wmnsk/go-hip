@@ -73,17 +73,19 @@ func Decode(b []byte) (Param, error) {
 		p = &HostID{}
 	case ParamTypeHITSuiteList:
 		p = &HITSuiteList{}
+	/* XXX - not implemented
+	case ParamTypeCert:
+		p = &Cert{}
+	case ParamTypeNotification:
+		p = &Notification{}
+	case ParamTypeEchoRequestSigned:
+		p = &EchoRequestSigned{}
+	case ParamTypeEchoResponseSigned:
+		p = &EchoResponseSigned{}
+	*/
+	case ParamTypeTransportFormatList:
+		p = &TransportFormatList{}
 		/* XXX - not implemented
-		case ParamTypeCert:
-			p = &Cert{}
-		case ParamTypeNotification:
-			p = &Notification{}
-		case ParamTypeEchoRequestSigned:
-			p = &EchoRequestSigned{}
-		case ParamTypeEchoResponseSigned:
-			p = &EchoResponseSigned{}
-		case ParamTypeTransportFormatList:
-			p = &TransportFormatList{}
 		case ParamTypeHIPMAC:
 			p = &HIPMAC{}
 		case ParamTypeHIPMAC2:

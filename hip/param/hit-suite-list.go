@@ -9,14 +9,14 @@ package param
 // Spec: 5.2.10.  HIT_SUITE_LIST
 type HITSuiteList struct {
 	*Header
-	DHGroupIDs []uint8
+	SuiteIDs []uint8
 }
 
 // NewHITSuiteList creates a new HITSuiteList.
 func NewHITSuiteList(ids ...uint8) *HITSuiteList {
 	h := &HITSuiteList{
-		Header:     &Header{Type: ParamTypeHITSuiteList},
-		DHGroupIDs: ids,
+		Header:   &Header{Type: ParamTypeHITSuiteList},
+		SuiteIDs: ids,
 	}
 
 	h.Padding = make([]byte, padlen(len(ids)))
@@ -46,7 +46,7 @@ func (h *HITSuiteList) DecodeFromBytes(b []byte) error {
 		return err
 	}
 
-	h.DHGroupIDs = h.Contents
+	h.SuiteIDs = h.Contents
 
 	return nil
 }
@@ -63,17 +63,17 @@ func (h *HITSuiteList) Serialize() ([]byte, error) {
 // SerializeTo serializes a HITSuiteList into bytes.
 func (h *HITSuiteList) SerializeTo(b []byte) error {
 	h.Header.Contents = make([]byte, h.Len()-4)
-	copy(h.Header.Contents, h.DHGroupIDs)
+	copy(h.Header.Contents, h.SuiteIDs)
 
 	return h.Header.SerializeTo(b)
 }
 
 // Len returns the total length of a HITSuiteList, including Padding.
 func (h *HITSuiteList) Len() int {
-	return 4 + len(h.DHGroupIDs) + len(h.Padding)
+	return 4 + len(h.SuiteIDs) + len(h.Padding)
 }
 
 // SetLength sets the length of Contents in Length field.
 func (h *HITSuiteList) SetLength() {
-	h.Length = uint16(len(h.DHGroupIDs))
+	h.Length = uint16(len(h.SuiteIDs))
 }
