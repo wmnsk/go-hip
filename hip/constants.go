@@ -92,3 +92,24 @@ const (
 const (
 	TFESP uint16 = 4095
 )
+
+// Notify Message Type definitions.
+//
+// Spec: 5.2.19.  NOTIFICATION
+const (
+	NotifyUnsupportedCriticalParameterType uint16 = 1
+	NotifyInvalidSyntax                    uint16 = 7
+	NotifyNoDHProposalChosen               uint16 = 14
+	NotifyInvalidDHChosen                  uint16 = 15
+	NotifyNoHIPProposalChosen              uint16 = 16
+	NotifyInvalidHIPCipherChosen           uint16 = 17
+	NotifyUnsupportedHITSuite              uint16 = 20
+	NotifyAuthenticationFailed             uint16 = 24
+	NotifyChecksumFailed                   uint16 = 26
+	NotifyHIPMACFailed                     uint16 = 28
+	NotifyEncryptionFailed                 uint16 = 32
+	NotifyInvalidHIT                       uint16 = 40
+	NotifyBlockedByPolicy                  uint16 = 42
+	NotifyResponderBusyPleaseRetry         uint16 = 44
+	NotifyI2Acknowledgement                uint16 = 16384
+)

@@ -74,8 +74,10 @@ func Decode(b []byte) (Param, error) {
 	/* XXX - not implemented
 	case ParamTypeCert:
 		p = &Cert{}
+	*/
 	case ParamTypeNotification:
 		p = &Notification{}
+	/* XXX - not implemented
 	case ParamTypeEchoRequestSigned:
 		p = &EchoRequestSigned{}
 	case ParamTypeEchoResponseSigned:
