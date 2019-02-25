@@ -51,9 +51,9 @@ Parameters defined in 5.2. HIP Parameters, RFC 7401 are under its implementation
 | 705   | HostID               | Yes        |
 | 715   | HITSuiteList         | Yes        |
 | 768   | Cert                 |            |
-| 832   | Notification         |            |
-| 897   | EchoRequestSigned    |            |
-| 961   | EchoResponseSigned   |            |
+| 832   | Notification         | Yes        |
+| 897   | EchoRequestSigned    | Yes        |
+| 961   | EchoResponseSigned   | Yes        |
 | 2049  | TransportFormatList  | Yes        |
 | 61505 | HIPMAC               | Yes        |
 | 61569 | HIPMAC2              | Yes        |
