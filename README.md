@@ -49,14 +49,14 @@ Parameters defined in 5.2. HIP Parameters, RFC 7401 are under its implementation
 | 579   | HIPCipher            | Yes        |
 | 641   | Encrypted            |            |
 | 705   | HostID               | Yes        |
-| 715   | HITSuiteList         |            |
+| 715   | HITSuiteList         | Yes        |
 | 768   | Cert                 |            |
 | 832   | Notification         |            |
 | 897   | EchoRequestSigned    |            |
 | 961   | EchoResponseSigned   |            |
-| 2049  | TransportFormatList  |            |
-| 61505 | HIPMAC               |            |
-| 61569 | HIPMAC2              |            |
+| 2049  | TransportFormatList  | Yes        |
+| 61505 | HIPMAC               | Yes        |
+| 61569 | HIPMAC2              | Yes        |
 | 61633 | HIPSignature2        |            |
 | 61697 | HIPSignature         |            |
 | 63661 | EchoRequestUnsigned  |            |

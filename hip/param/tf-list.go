@@ -8,7 +8,7 @@ import "encoding/binary"
 
 // TransportFormatList represents a TransportFormatList parameter.
 //
-// Spec: 5.2.6.  DH_GROUP_LIST
+// Spec: 5.2.11.  TRANSPORT_FORMAT_LIST
 type TransportFormatList struct {
 	*Header
 	TFTypes []uint16
@@ -17,7 +17,7 @@ type TransportFormatList struct {
 // NewTransportFormatList creates a new TransportFormatList.
 func NewTransportFormatList(ids ...uint16) *TransportFormatList {
 	t := &TransportFormatList{
-		Header:    &Header{Type: ParamTypeTransportFormatList},
+		Header:  &Header{Type: ParamTypeTransportFormatList},
 		TFTypes: ids,
 	}
 

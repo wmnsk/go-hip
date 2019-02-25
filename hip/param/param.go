@@ -85,11 +85,11 @@ func Decode(b []byte) (Param, error) {
 	*/
 	case ParamTypeTransportFormatList:
 		p = &TransportFormatList{}
+	case ParamTypeHIPMAC:
+		p = &HIPMAC{}
+	case ParamTypeHIPMAC2:
+		p = &HIPMAC2{}
 		/* XXX - not implemented
-		case ParamTypeHIPMAC:
-			p = &HIPMAC{}
-		case ParamTypeHIPMAC2:
-			p = &HIPMAC2{}
 		case ParamTypeHIPSignature2:
 			p = &HIPSignature2{}
 		case ParamTypeHIPSignature:
