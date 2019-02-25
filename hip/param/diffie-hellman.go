@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 )
 
-// DiffieHellman represents a header (common fields) in HIP parameter.
+// DiffieHellman represents a DiffieHellman parameter.
 //
 // Spec: 5.2.7.  DIFFIE_HELLMAN
 type DiffieHellman struct {

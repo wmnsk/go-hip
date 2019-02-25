@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 )
 
-// R1Counter represents a header (common fields) in HIP parameter.
+// R1Counter represents a R1Counter parameter.
 //
 // Spec: 5.2.3.  R1_COUNTER
 type R1Counter struct {

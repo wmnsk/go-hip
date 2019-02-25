@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 )
 
-// Puzzle represents a header (common fields) in HIP parameter.
+// Puzzle represents a Puzzle parameter.
 //
 // Spec: 5.2.4.  PUZZLE
 type Puzzle struct {

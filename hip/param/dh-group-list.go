@@ -4,7 +4,7 @@
 
 package param
 
-// DHGroupList represents a header (common fields) in HIP parameter.
+// DHGroupList represents a DHGroupList parameter.
 //
 // Spec: 5.2.6.  DH_GROUP_LIST
 type DHGroupList struct {

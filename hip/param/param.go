@@ -71,9 +71,9 @@ func Decode(b []byte) (Param, error) {
 	*/
 	case ParamTypeHostID:
 		p = &HostID{}
+	case ParamTypeHITSuiteList:
+		p = &HITSuiteList{}
 		/* XXX - not implemented
-		case ParamTypeHITSuiteList:
-			p = &HITSuiteList{}
 		case ParamTypeCert:
 			p = &Cert{}
 		case ParamTypeNotification:
@@ -93,9 +93,9 @@ func Decode(b []byte) (Param, error) {
 		case ParamTypeHIPSignature:
 			p = &HIPSignature{}
 		case ParamTypeEchoRequestUnSigned:
-			p = &EchoRequestUnSigned{}
+			p = &EchoRequestUnsigned{}
 		case ParamTypeEchoResponseUNSigned:
-			p = &EchoResponseUNSigned{}
+			p = &EchoResponseUnsigned{}
 		default:
 			p = &Generic{}
 		*/

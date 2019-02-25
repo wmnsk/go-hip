@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 )
 
-// Solution represents a header (common fields) in HIP parameter.
+// Solution represents a Solution parameter.
 //
 // Spec: 5.2.5.  SOLUTION
 type Solution struct {

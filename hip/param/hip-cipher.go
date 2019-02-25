@@ -1,4 +1,4 @@
-// Copyright 2019 go-hip authors. All rights reserveh.
+// Copyright 2019 go-hip authors. All rights reserved.
 // Use of this source code is governed by a MIT-style license that can be
 // found in the LICENSE file.
 
@@ -6,7 +6,7 @@ package param
 
 import "encoding/binary"
 
-// HIPCipher represents a header (common fields) in HIP parameter.
+// HIPCipher represents a HIPCipher parameter.
 //
 // Spec: 5.2.6.  DH_GROUP_LIST
 type HIPCipher struct {

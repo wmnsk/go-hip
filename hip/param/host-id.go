@@ -8,7 +8,7 @@ import (
 	"encoding/binary"
 )
 
-// HostID represents a header (common fields) in HIP parameter.
+// HostID represents a HostID parameter.
 //
 // Spec: 5.2.9.  HOST_ID
 type HostID struct {

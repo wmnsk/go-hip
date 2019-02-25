@@ -74,3 +74,13 @@ const (
 	_ uint16 = iota
 	ECCSecP160R1
 )
+
+// HIT Suite definitions.
+//
+// Spec: 5.2.10.  HIT_SUITE_LIST
+const (
+	_                    uint8 = 0x00
+	HITSuiteRSADSASHA256 uint8 = 0x10
+	HITSuiteECDSASHA384  uint8 = 0x20
+	HITSuiteECDSALOWSHA1 uint8 = 0x30
+)
