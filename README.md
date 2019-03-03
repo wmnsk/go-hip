@@ -2,9 +2,10 @@
 
 Package hip provides simple and painless handling of HIP(Host Identity Protocol), implemented in the Go Programming Language.
 
-[![CircleCI](https://circleci.com/gh/wmnsk/go-hip.svg?style=svg)](https://circleci.com/gh/wmnsk/go-hip)
+
+[![CircleCI](https://circleci.com/gh/wmnsk/go-hip.svg?style=shield)](https://circleci.com/gh/wmnsk/go-hip)
+[![GolangCI](https://golangci.com/badges/github.com/wmnsk/go-hip.svg)](https://golangci.com/r/github.com/wmnsk/go-hip)
 [![GoDoc](https://godoc.org/github.com/wmnsk/go-hip?status.svg)](https://godoc.org/github.com/wmnsk/go-hip)
-[![Go Report Card](https://goreportcard.com/badge/github.com/wmnsk/go-hip)](https://goreportcard.com/report/github.com/wmnsk/go-hip)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/wmnsk/go-hip/blob/master/LICENSE)
 
 ## Features
