@@ -7,9 +7,9 @@ package param_test
 import (
 	"testing"
 
-	"github.com/wmnsk/go-hip/hip"
-	"github.com/wmnsk/go-hip/hip/param"
-	"github.com/wmnsk/go-hip/hip/param/testutils"
+	"github.com/wmnsk/go-hip"
+	"github.com/wmnsk/go-hip/param"
+	"github.com/wmnsk/go-hip/param/testutils"
 )
 
 func TestHostID(t *testing.T) {

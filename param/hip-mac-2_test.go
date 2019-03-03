@@ -7,24 +7,29 @@ package param_test
 import (
 	"testing"
 
-	"github.com/wmnsk/go-hip/hip/param"
-	"github.com/wmnsk/go-hip/hip/param/testutils"
+	"github.com/wmnsk/go-hip/param"
+	"github.com/wmnsk/go-hip/param/testutils"
 )
 
-func TestR1Counter(t *testing.T) {
+func TestHIPMAC2(t *testing.T) {
 	cases := []testutils.TestCase{
 		{
 			Description: "Normal",
-			Structured:  param.NewR1Counter(0x1122334455667788),
+			Structured:  param.NewHIPMAC2([]byte{0xde, 0xad, 0xbe, 0xef}),
 			Serialized: []byte{
-				0x00, 0x81, 0x00, 0x0c, 0x00, 0x00, 0x00, 0x00,
-				0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88,
+				0xf0, 0x81, 0x00, 0x04, 0xde, 0xad, 0xbe, 0xef,
+			},
+		}, {
+			Description: "WithPadding",
+			Structured:  param.NewHIPMAC2([]byte{0xca, 0xfe}),
+			Serialized: []byte{
+				0xf0, 0x81, 0x00, 0x02, 0xca, 0xfe, 0x00, 0x00,
 			},
 		},
 	}
 
 	testutils.Run(t, cases, func(b []byte) (testutils.Serializeable, error) {
-		v, err := param.DecodeR1Counter(b)
+		v, err := param.DecodeHIPMAC2(b)
 		if err != nil {
 			return nil, err
 		}

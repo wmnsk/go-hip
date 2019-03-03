@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/pascaldekloe/goe/verify"
-	"github.com/wmnsk/go-hip/hip/param"
+	"github.com/wmnsk/go-hip/param"
 )
 
 // Serializeable is just for testing Params. Don't use this.

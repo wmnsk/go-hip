@@ -7,30 +7,29 @@ package param_test
 import (
 	"testing"
 
-	"github.com/wmnsk/go-hip/hip/param"
-	"github.com/wmnsk/go-hip/hip/param/testutils"
+	"github.com/wmnsk/go-hip/param"
+	"github.com/wmnsk/go-hip/param/testutils"
 )
 
-func TestDHGroupList(t *testing.T) {
+func TestEchoRequestUnsigned(t *testing.T) {
 	cases := []testutils.TestCase{
 		{
 			Description: "Normal",
-			Structured:  param.NewDHGroupList(1, 2, 3, 4),
+			Structured:  param.NewEchoRequestUnsigned([]byte{0xde, 0xad, 0xbe, 0xef}),
 			Serialized: []byte{
-				0x01, 0xff, 0x00, 0x04, 0x01, 0x02, 0x03, 0x04,
+				0xf8, 0xad, 0x00, 0x04, 0xde, 0xad, 0xbe, 0xef,
 			},
 		}, {
 			Description: "WithPadding",
-			Structured:  param.NewDHGroupList(1, 2, 3, 4, 5, 6),
+			Structured:  param.NewEchoRequestUnsigned([]byte{0xca, 0xfe}),
 			Serialized: []byte{
-				0x01, 0xff, 0x00, 0x06, 0x01, 0x02, 0x03, 0x04,
-				0x05, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+				0xf8, 0xad, 0x00, 0x02, 0xca, 0xfe, 0x00, 0x00,
 			},
 		},
 	}
 
 	testutils.Run(t, cases, func(b []byte) (testutils.Serializeable, error) {
-		v, err := param.DecodeDHGroupList(b)
+		v, err := param.DecodeEchoRequestUnsigned(b)
 		if err != nil {
 			return nil, err
 		}

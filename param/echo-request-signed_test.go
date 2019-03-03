@@ -7,31 +7,29 @@ package param_test
 import (
 	"testing"
 
-	"github.com/wmnsk/go-hip/hip/param"
-	"github.com/wmnsk/go-hip/hip/param/testutils"
+	"github.com/wmnsk/go-hip/param"
+	"github.com/wmnsk/go-hip/param/testutils"
 )
 
-func TestHIPCipher(t *testing.T) {
+func TestEchoRequestSigned(t *testing.T) {
 	cases := []testutils.TestCase{
 		{
 			Description: "Normal",
-			Structured:  param.NewHIPCipher(1, 2, 3, 4, 5, 6),
+			Structured:  param.NewEchoRequestSigned([]byte{0xde, 0xad, 0xbe, 0xef}),
 			Serialized: []byte{
-				0x02, 0x43, 0x00, 0x0c, 0x00, 0x01, 0x00, 0x02,
-				0x00, 0x03, 0x00, 0x04, 0x00, 0x05, 0x00, 0x06,
+				0x03, 0x81, 0x00, 0x04, 0xde, 0xad, 0xbe, 0xef,
 			},
 		}, {
 			Description: "WithPadding",
-			Structured:  param.NewHIPCipher(1, 2, 3, 4),
+			Structured:  param.NewEchoRequestSigned([]byte{0xca, 0xfe}),
 			Serialized: []byte{
-				0x02, 0x43, 0x00, 0x08, 0x00, 0x01, 0x00, 0x02,
-				0x00, 0x03, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00,
+				0x03, 0x81, 0x00, 0x02, 0xca, 0xfe, 0x00, 0x00,
 			},
 		},
 	}
 
 	testutils.Run(t, cases, func(b []byte) (testutils.Serializeable, error) {
-		v, err := param.DecodeHIPCipher(b)
+		v, err := param.DecodeEchoRequestSigned(b)
 		if err != nil {
 			return nil, err
 		}
