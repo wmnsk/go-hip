@@ -3,7 +3,8 @@
 Package hip provides simple and painless handling of HIP(Host Identity Protocol), implemented in the Go Programming Language.
 
 
-[![CircleCI](https://circleci.com/gh/wmnsk/go-hip.svg?style=shield)](https://circleci.com/gh/wmnsk/go-hip)
+[![CircleCI](https://circleci.com/gh/wmnsk/go-hip.svg?style=shield)](https://circleci.com/gh/wmnsk/go-hip)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwmnsk%2Fgo-hip.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwmnsk%2Fgo-hip?ref=badge_shield)
+
 [![GolangCI](https://golangci.com/badges/github.com/wmnsk/go-hip.svg)](https://golangci.com/r/github.com/wmnsk/go-hip)
 [![GoDoc](https://godoc.org/github.com/wmnsk/go-hip?status.svg)](https://godoc.org/github.com/wmnsk/go-hip)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/wmnsk/go-hip/blob/master/LICENSE)
@@ -76,3 +77,6 @@ _I'm always open to welcome co-authors! Please feel free to talk to me._
 ## LICENSE
 
 [MIT](https://github.com/wmnsk/go-hip/blob/master/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwmnsk%2Fgo-hip.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwmnsk%2Fgo-hip?ref=badge_large)
